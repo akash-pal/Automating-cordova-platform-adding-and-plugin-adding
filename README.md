@@ -1,7 +1,8 @@
 # Automating-cordova-platform-adding-and-plugin-adding
-Automating the process of adding a Cordova platform and plugins
+Automating the process of adding a Cordova platform and plugins for both cordova and ionic based projects.
 
 <b><u>Standard process of creating a cordova project and adding plugins:</u></b>
+
 1. cordova create SampleApp com.example.sampleapp SampleApp
 2. cd SampleApp
 3. cordova platfrom add android
@@ -13,12 +14,16 @@ Automating the process of adding a Cordova platform and plugins
 8. cordova run ios
 
 <b><u>The Problem</u></b>
-Mainatining and managaing all the plugins is a cumberson process.
-When the plugins are added a specific version of the plugin is added.
-If the plugins have to be modified or the project has to be updated then it becomes very difficult.
+
+1. Mainatining and managaing all the plugins is a cumberson process.
+2. When the plugins are added a specific version of the plugin is added.
+3. If the plugins have to be modified or the project has to be updated then it would be easier to have all the plugins with their   respective version.   
 
 <b><u>The Solution</u></b>
-All the plugins and platforms are mentioned in a file - package.json
+
+1. Add all platfrom (with specific version) using a single command.
+2. Add all plugins (with specific version) using a single command.
+3. All the plugins and platforms are mentioned in a file - package.json
 
 <i>The key "platforms" has an array of platforms as value</i>
 
@@ -62,27 +67,28 @@ The above snippet will add cordova android platform version 4.1.1
          "cordova-plugin-camera@2.3.0",
      ]
     
- <b> Automating the process <b>
+ <b> Automating the process </b>
  
- 1. Platform automation
+ 1. <i>Platform automation</i>
  
   The platform installation script platforms.js under tasks directory adds each platform
  
   For running the platform script, type: 
  
-  node tasks/platfroms.js (This command will add all the platforms mentioned)
-  node tasks/platfroms.js remove (This command will remove all the platforms mentioned)
+      node tasks/platfroms.js (This command will add all the platforms mentioned)
+      node tasks/platfroms.js remove (This command will remove all the platforms mentioned)
 
- 2. Plugin automation
+ 2. <i>Plugin automation</i>
  
   The plugin installation script plugins.js under tasks directory adds each plugin
  
   For running the plugin script, type: 
  
-  node tasks/plugins.js (This command will add all the plugins mentioned)
-  node tasks/plugins.js remove (This command will remove all the plugins mentioned)
+      node tasks/plugins.js (This command will add all the plugins mentioned)
+      node tasks/plugins.js remove (This command will remove all the plugins mentioned)
   
   Note: Place the package.json and tasks folder under the root directory
+  
         This will be same for both ionic and cordova based hybrid projects.  
   
 
